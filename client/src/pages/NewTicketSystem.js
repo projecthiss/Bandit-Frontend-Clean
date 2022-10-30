@@ -273,7 +273,7 @@ class NewTicketSystem extends Component {
     }
 
     setMarkUpNFormat(cb) {
-        api.getMarkUpFormat(this.state.currentDocument.question, (data) => {
+        /**api.getMarkUpFormat(this.state.currentDocument.question, (data) => {
                 var currentDocument = {...this.state.currentDocument}
                 currentDocument.markupNFormat = data.nFormat
                 this.setState(
@@ -287,7 +287,9 @@ class NewTicketSystem extends Component {
                 alert("Error getting Highlighting")
                 cb()
             }
-        )
+        )*/
+        //alert("Highlighting deactivated")
+        cb()
     }
 
     updateTicketList = (cb) => {

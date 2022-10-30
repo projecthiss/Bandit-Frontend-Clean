@@ -1,5 +1,5 @@
-const model = require('../../../mongoModel')
-const mongoose = require("../../../mongoConnection").mongoose
+const model = require('../../../../mongoModel')
+const mongoose = require("../../../../mongoConnection").mongoose
 const dfd = require("danfojs-node")
 
 const all_data = require("./tickets.json")
