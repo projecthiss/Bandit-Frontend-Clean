@@ -48,13 +48,12 @@ const ticketsSchema = new Schema({
         }],
     userCreatedTicket: {type: String},
     markupTFormat: {},
-
     userShownID: {type: Number},
     includedForSolutions: {type: Boolean, default: false},
     hasBeenReviewed: {type: Boolean, default: false},
     reviewedDate: {type: Date},
-    internID: {type: Number, required: true},
-    uhd_NR: {type: Number, required: true},
+    internID: {type: String, required: true},
+    uhd_NR: {type: String, required: true},
     date: {type: Date, required: true},
     report: {type: String, required: true},
     main_category: {type: String, required: true},
@@ -62,8 +61,6 @@ const ticketsSchema = new Schema({
     category_2: {type: String, required: true},
     category_3: {type: String, required: true},
     question: {type: String, required: true},
-
-
     editor: {type: String},
     answerhistory: [
         {

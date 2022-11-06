@@ -229,7 +229,6 @@ const fontColor = {
 class NewTicketSystem extends Component {
     constructor(props) {
         super(props);
-        console.log(window.sessionStorage.getItem('userRole'))
         this.state = {
             drawerOpen: true,
             allTickets: [],
@@ -273,7 +272,7 @@ class NewTicketSystem extends Component {
     }
 
     setMarkUpNFormat(cb) {
-        /**api.getMarkUpFormat(this.state.currentDocument.question, (data) => {
+        /**api.getMarkUpFormat(this.state.currentDocument.question, (data) => { HERE
                 var currentDocument = {...this.state.currentDocument}
                 currentDocument.markupNFormat = data.nFormat
                 this.setState(
@@ -326,8 +325,9 @@ class NewTicketSystem extends Component {
             console.log(this.state.currentDocument.recommendedTickets)
             this.fixHistoricData(() => {
                 this.setMarkUpNFormat(() => {
-                    this.getHighlightedText()
-                    this.getNewPrediction()
+                    this.getHighlightedText() //HERE
+                    //this.getNewPrediction() HERE
+                    this.setState({isLoading: false})
 
                 })
             })

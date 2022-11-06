@@ -278,7 +278,7 @@ class CustomModal extends Component {
                                                     multiline
                                                     placeholder="Placeholder"
                                                     defaultValue={"No Data"}
-                                                    value={this.state.currentDocument.main_category}
+                                                    value={this.state.ticket.main_category}
                                                     margin="normal"
                                                     variant="outlined"
                                                 />
@@ -293,7 +293,7 @@ class CustomModal extends Component {
                                                     multiline
                                                     placeholder="Placeholder"
                                                     defaultValue={"No Data"}
-                                                    value={this.state.currentDocument.category_1}
+                                                    value={this.state.ticket.category_1}
                                                     margin="normal"
                                                     variant="outlined"
                                                 />
@@ -308,7 +308,7 @@ class CustomModal extends Component {
                                                     multiline
                                                     placeholder="Placeholder"
                                                     defaultValue={"No Data"}
-                                                    value={this.state.currentDocument.category_2}
+                                                    value={this.state.ticket.category_2}
                                                     margin="normal"
                                                     variant="outlined"
                                                 />
@@ -323,7 +323,7 @@ class CustomModal extends Component {
                                                     multiline
                                                     placeholder="Placeholder"
                                                     defaultValue={"No Data"}
-                                                    value={this.state.currentDocument.category_3}
+                                                    value={this.state.ticket.category_3}
                                                     margin="normal"
                                                     variant="outlined"
                                                 />

@@ -32,19 +32,19 @@ const getTickets = (userIntID, username, done) => {
             return done(err)
         }
         // für Evaluation
-        model.tickets.find({
-            hasBeenReviewed: false,
-            user_evaluation_shown: userIntID,
-            $or: [{userCreatedTicket: {$exists: false}}, {userCreatedTicket: false}]
-        })
-            //model.tickets.find({hasBeenReviewed: false})
+    //    model.tickets.find({
+  //          hasBeenReviewed: false,
+ //           user_evaluation_shown: userIntID,
+ //           $or: [{userCreatedTicket: {$exists: false}}, {userCreatedTicket: false}]
+//        })
+            model.tickets.find({hasBeenReviewed: false})
             .populate({
                 path: 'recommendedTickets.predictedItems.id',
                 model: 'tickets'
             })
             .sort({date: 1})
             // für Evaluation
-            //.mod('userShownID', [count, userIntID])
+            .mod('userShownID', [count, userIntID])
             .limit(50)
             .exec((err, data) => {
                 if (err) {
