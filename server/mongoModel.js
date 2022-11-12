@@ -86,7 +86,7 @@ const ticketsSchema = new Schema({
         }]
     }],
     user_evaluation_shown: {type: Number, required: true},
-
+    clusterCat: {type: String, required: true},
     deleted: {type: Boolean, default: false},
 }, {collection: 'tickets'})
 

@@ -904,6 +904,27 @@ class NewTicketSystem extends Component {
                                         <Grid item xs={12} className={classes.padding}>
                                             <Divider/>
                                         </Grid>
+                                        {this.state.currentDocument.answerhistory !== undefined ? this.state.currentDocument.answerhistory.map((element) =>
+                                            <Grid item xs={12} className={classes.padding}>
+                                                <InputLabel shrink htmlFor="bootstrap-input"
+                                                            className={classes.bootstrapFormLabel}>
+                                                    {new Date(element.date).toLocaleString()}
+                                                </InputLabel>
+                                                <InputBase
+                                                    multiline
+                                                    inputProps={fontColor}
+                                                    fullWidth
+                                                    placeholder="Placeholder"
+                                                    disabled
+                                                    id="bootstrap-input"
+                                                    defaultValue={element.content.trim()}
+                                                    classes={{
+                                                        root: classes.bootstrapRoot,
+                                                        input: classes.bootstrapInput,
+                                                    }}
+                                                />
+                                            </Grid>
+                                        ) : ""}
 
                                     </Grid>
                                     <div className={classes.cardArea}>
@@ -980,11 +1001,12 @@ class NewTicketSystem extends Component {
                                                 })
                                                 : <div></div>}
                                         </Grid>
+
                                     </div>
                                 </div>
                                 <div className={classes.list}>
                                     <div className={classes.drawerHeader}/>
-                                    <List>
+                                    <List style={{position:'fixed'}}>
                                         {settingsContext.settings.categories ? settingsContext.settings.categories.map((item, index) => (
                                             <ListItem key={item.key} button onClick={() => {
                                                 this.markText(item.color, item.key)

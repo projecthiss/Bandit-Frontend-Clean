@@ -23,7 +23,7 @@ const getOptions = (route, body) => {
 
 counter = 0
 addedCounter = 0
-dfd.readExcel('HighlightSetup.xlsx',  {sheetStubs: true}).then((df) => {
+dfd.readExcel('HighlightSetup.xlsx', ).then((df) => {
     //console.log("loaded")
     //console.log(df.shape)
     //console.log(df.values[0])
@@ -109,7 +109,7 @@ loadDataOfRow = (df, currentRow) => {
                 user_evaluation_shown: true,
 
                 evaluation: evaluation,
-                clusterCat: "NULL",
+                clusterCat: df.at(currentRow, "RELEVANT_ClusterCat"),
                 preSolutionStandard: preSolutionStandard
             })
             ticket.save((err, complete) => {
