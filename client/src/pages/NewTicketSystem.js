@@ -320,9 +320,9 @@ class NewTicketSystem extends Component {
     };
 
     updateCurrentDocument = (index) => {
-        console.log(this.state.currentDocument.recommendedTickets)
+        console.log(this.state.currentDocument)
         this.setState({isLoading: true, currentDocument: this.state.allTickets[index]}, () => {
-            console.log(this.state.currentDocument.recommendedTickets)
+            console.log(this.state.currentDocument)
             this.fixHistoricData(() => {
                 this.setMarkUpNFormat(() => {
                     this.getHighlightedText() //HERE
