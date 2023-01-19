@@ -27,6 +27,7 @@ const getPasswordhash = (name, done) => {
 
 const getTickets = (userIntID, username, done) => {
     model.users.countDocuments({}, (err, count) => {
+
         if (err) {
             console.log(err)
             return done(err)
@@ -51,8 +52,7 @@ const getTickets = (userIntID, username, done) => {
                     console.log(err)
                     return done(err)
                 }
-                console.log(username)
-                console.log({hasBeenReviewed: false, userCreatedTicket: username})
+
                 model.tickets.find({hasBeenReviewed: false, userCreatedTicket: username}).populate({
                     path: 'recommendedTickets.predictedItems.id',
                     model: 'tickets'
