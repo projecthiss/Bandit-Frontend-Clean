@@ -25,6 +25,9 @@ const getPasswordhash = (name, done) => {
     })
 }
 
+/**
+ * GETTICKETS: Retrieves all tickets from the mongo "model"
+ */
 const getTickets = (userIntID, username, done) => {
     model.users.countDocuments({}, (err, count) => {
 
@@ -32,7 +35,7 @@ const getTickets = (userIntID, username, done) => {
             console.log(err)
             return done(err)
         }
-        // für Evaluation
+        // für Evaluation (Unterschiedliche Tickets für unterschiedliche User)
     //    model.tickets.find({
   //          hasBeenReviewed: false,
  //           user_evaluation_shown: userIntID,
@@ -44,7 +47,7 @@ const getTickets = (userIntID, username, done) => {
                 model: 'tickets'
             })
             .sort({date: 1})
-            // für Evaluation
+            // für Evaluation (Reduktion auf 50 Tickets)
             .mod('userShownID', [count, userIntID])
             .limit(50)
             .exec((err, data) => {
@@ -98,6 +101,10 @@ const getTicketByID = (id, done) => {
         return done(null, data)
     })
 }
+
+/**
+ * Nicht mehr so relevant
+ */
 const getManyTicketByID = (ids, done) => {
 
 
