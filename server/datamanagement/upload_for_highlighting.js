@@ -1,5 +1,5 @@
 /**
- * Script um Daten aus einer Excel Tabelle in die Mongo DB zu laden und parallel bereits das Tagging zu ergänzen
+ * Script to load data from an Excel table into the Mongo DB and to add the tagging in parallel.
  */
 
 const model = require('../mongoModel')
